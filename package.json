@@ -1,0 +1,31 @@
+{
+  "name": "mernwt-starterkit",
+  "version": "1.0.0",
+  "description": "",
+  "main": "./dist/bundle.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "typings": "typings"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dustinchang/mernwt-starterkit.git"
+  },
+  "author": "Dustin Chang",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/dustinchang/mernwt-starterkit/issues"
+  },
+  "homepage": "https://github.com/dustinchang/mernwt-starterkit",
+  "dependencies": {
+    "react": "^15.3.2",
+    "react-dom": "^15.3.2",
+    "typescript": "^2.0.3",
+    "typings": "^1.4.0",
+    "webpack": "^1.13.2"
+  },
+  "devDependencies": {
+    "source-map-loader": "^0.1.5",
+    "ts-loader": "^0.8.2"
+  }
+}
