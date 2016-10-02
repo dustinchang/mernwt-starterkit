@@ -8,14 +8,3 @@ When installing declaration files with `typings`, use either of the two methods:
      "typings": "typings"
    }
  * Then ex: `npm run typings -- install --global --save dt~react-dom`
-
-At Add a TypeScript configuration file
-
-
-r n m e w t
-
-rnewtm
-
-renmwt
-
-mernwt
