@@ -1,5 +1,6 @@
 var path = require('path');
 var webpack = require('webpack');
+var webpackNotifierPlugin = require('webpack-notifier');
 
 module.exports = {
     entry: [
@@ -34,7 +35,8 @@ module.exports = {
 
     plugins: [
       new webpack.HotModuleReplacementPlugin(),
-      new webpack.NoErrorsPlugin()
+      new webpack.NoErrorsPlugin(),
+      new webpackNotifierPlugin({title: 'Webpack built', alwaysNotify: true})
     ]
 
     // When importing a module whose path matches one of the following, just
