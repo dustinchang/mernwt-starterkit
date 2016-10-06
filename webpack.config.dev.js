@@ -24,7 +24,13 @@ module.exports = {
     module: {
         loaders: [
             // All files with a '.ts' or '.tsx' extension will be handled by 'ts-loader'.
-            { test: /\.tsx?$/, loader: "ts-loader" }
+            { test: /\.tsx?$/, loader: "ts-loader" },
+            {
+                test: /\.scss$/,
+                loader: "style!css!sass?sourceMap",
+                include: path.join(__dirname, "src/styles")
+            }
+
         ],
 
         preLoaders: [
