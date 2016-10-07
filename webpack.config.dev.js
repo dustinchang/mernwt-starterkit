@@ -27,7 +27,7 @@ module.exports = {
             { test: /\.tsx?$/, loader: "ts-loader" },
             {
                 test: /\.scss$/,
-                loader: "style!css!sass?sourceMap",
+                loader: "style!css?sourceMap!sass?sourceMap",
                 include: path.join(__dirname, "src/styles")
             }
 
@@ -35,9 +35,12 @@ module.exports = {
 
         preLoaders: [
             // All output '.js' files will have any sourcemaps re-processed by 'source-map-loader'.
-            { test: /\.js$/, loader: "source-map-loader" }
+            { test: /\.js$/, loader: "source-map-loader" },
+            { test: /\.tsx?$/, loader: "tslint" }
         ]
     },
+
+    tslint: { emitErrors: false, failOnHint: false },
 
     plugins: [
       new webpack.HotModuleReplacementPlugin(),
