@@ -4,3 +4,4 @@ npm-debug.log
 # Ignored directories (ignoring dist/ as Atom plugin auto compiles typescript to a dist dir)
 node_modules/
 dist/
+.idea/
