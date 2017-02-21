@@ -14,7 +14,9 @@ const sagaMiddleware = createSagaMiddleware();
 const store = createStore(rootReducer, applyMiddleware(sagaMiddleware));
 export const history = syncHistoryWithStore(browserHistory, store);
 
-export default const generateStore = (): Redux.Store<T> => {
+const generateStore = () => {
   //TODO run the sagas here, and test that the middleware works
   return store;
 };
+
+export default generateStore;
