@@ -5,13 +5,14 @@ var port = '7770';
 
 module.exports = {
   entry: [
-    `webpack-hot-middleware/client?path=http://localhost:${port}/__webpack_hmr&reload=true`,
+    //`webpack-hot-middleware/client?path=http://localhost:${port}/__webpack_hmr&reload=true`,
     './src/index'
+    //path.join(__dirname, 'browser.js')
   ],
   output: {
     path: path.join(__dirname, 'dist'), //Seems to create dist dir on load with bundle.js
-    filename: 'bundle.js',
-    publicPath: '/static/'
+    filename: 'bundle.js'
+    //publicPath: '/static/'
   },
 
   // Enable sourcemaps for debugging webpack's output.
@@ -22,6 +23,7 @@ module.exports = {
     extensions: ["", ".webpack.js", ".web.js", ".ts", ".tsx", ".js"]
   },
 
+  target: "node",
   module: {
     loaders: [
       // All files with a '.ts' or '.tsx' extension will be handled by 'ts-loader'.
@@ -30,7 +32,8 @@ module.exports = {
         test: /\.scss$/,
         loader: "style!css?sourceMap!sass?sourceMap",
         include: path.join(__dirname, "src/styles")
-      }
+      },
+      {test:/\.json$/, loader: 'json'}
 
     ],
 
