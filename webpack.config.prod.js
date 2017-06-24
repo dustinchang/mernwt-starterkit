@@ -5,7 +5,7 @@ var port = '7770';
 
 module.exports = {
   entry: [
-    `webpack-hot-middleware/client?path=http://localhost:${port}/__webpack_hmr&reload=true`,
+    //`webpack-hot-middleware/client?path=http://localhost:${port}/__webpack_hmr&reload=true`,
     './src/index'
   ],
   output: {
@@ -46,7 +46,20 @@ module.exports = {
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NoErrorsPlugin(),
-    new webpackNotifierPlugin({title: 'Webpack built', alwaysNotify: true})
+    new webpackNotifierPlugin({title: 'Webpack built', alwaysNotify: true}),
+
+    new webpack.optimize.DedupePlugin(),
+    /*new webpack.optimize.UglifyJsPlugin({
+      minimize: true,
+      compress: {
+        warnings: false
+      }
+    }),*/
+    new webpack.DefinePlugin({
+      'process.env': {
+        'NODE_ENV': JSON.stringify('production')
+      }
+    })
   ]
 
   // When importing a module whose path matches one of the following, just
