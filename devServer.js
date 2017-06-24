@@ -17,7 +17,7 @@ if (process.env.NODE_ENV !== 'production') {
     res.sendFile(path.join(__dirname, 'index.html'));
   });
 
-  app.listen(7770, 'localhost', function(err) {
+  app.listen(process.env.PORT || 7770, 'localhost', function(err) {
     if (err) {
       console.log(err);
       return;

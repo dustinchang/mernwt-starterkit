@@ -1,7 +1,7 @@
 var path = require('path');
 var webpack = require('webpack');
 var webpackNotifierPlugin = require('webpack-notifier');
-var port = '7770';
+var port = process.env.PORT || '7770';
 
 module.exports = {
   entry: [
